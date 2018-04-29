@@ -15,6 +15,8 @@ var Schema = mongoose.Schema;
  */
 var Mongoose = module.exports = {};
 
+Mongoose.mongoose = mongoose;
+
 Mongoose.started = false;
 
 Mongoose.start = function(options) {
@@ -22,6 +24,10 @@ Mongoose.start = function(options) {
 		return Mongoose;
 	}
 	Mongoose.started = true;
+
+	if(options.debug){
+        mongoose.set('mongoose' , true);
+	}
 
 	var uri = 'mongodb://';
 
