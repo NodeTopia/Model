@@ -26,7 +26,7 @@ Mongoose.start = function(options) {
 	Mongoose.started = true;
 
 	if(options.debug){
-        mongoose.set('mongoose' , true);
+        mongoose.set('debug' , true);
 	}
 
 	var uri = 'mongodb://';
