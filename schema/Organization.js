@@ -51,7 +51,7 @@ var OrganizationSchema = new Schema({
 
 var autoPopulateLead = function(next) {
 	this.populate('quota');
-	this.populate('apps','is_active created_at updated_at name logSession metricSession maintenance url domains');
+	this.populate('apps','-organization');
 	this.populate('membership.user','username email info is_active is_staff');
 	this.populate('membership.role','created_at updated_at name level');
 	next()
