@@ -20,6 +20,11 @@ var HostSchema = new Schema({
         type: Number,
         required: true
     },
+    name: {
+        type: String,
+        required: true,
+        'default': 'system'
+    },
     active: {
         type: Boolean,
         required: true,
