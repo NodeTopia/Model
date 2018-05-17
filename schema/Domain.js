@@ -20,10 +20,10 @@ var DomainSchema = new Schema({
 		type : mongoose.Schema.Types.ObjectId,
 		ref : 'TLS'
 	},
-    hosts : {
+    hosts : [{
         type : mongoose.Schema.Types.ObjectId,
         ref : 'Host'
-    }
+    }]
 });
 
 var autoPopulateLead = function(next) {
