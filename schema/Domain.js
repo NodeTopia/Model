@@ -19,7 +19,11 @@ var DomainSchema = new Schema({
 	tls : {
 		type : mongoose.Schema.Types.ObjectId,
 		ref : 'TLS'
-	}
+	},
+    hosts : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'Host'
+    }
 });
 
 var autoPopulateLead = function(next) {
