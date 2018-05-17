@@ -27,7 +27,8 @@ var DomainSchema = new Schema({
 });
 
 var autoPopulateLead = function(next) {
-	this.populate('tls');
+    this.populate('tls');
+    this.populate('hosts');
 	next()
 };
 
