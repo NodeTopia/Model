@@ -81,7 +81,8 @@ NodeSchema.pre('save', function (next) {
 });
 
 NodeSchema.statics.getZone = function (options, cb) {
-    var query = {};
+    let query = {};
+    let self = this;
 
     query = {
         $or: options.zones.map(function (zone) {
@@ -107,21 +108,25 @@ NodeSchema.statics.getZone = function (options, cb) {
     } else {
         query.is_active = true;
     }
-    this.findOne(query, null, {
-        sort: {
-            last_used: 1
-        }
-    }, function (err, node) {
-        if (err) {
-            return cb(err);
-        }
-        if (!node) {
-            return cb();
-        }
-        node.last_used = Date.now();
-        node.save(function () {
-            cb(null, node);
+    return new Promise(function (resolve, reject) {
+
+        self.findOne(query, null, {
+            sort: {
+                last_used: 1
+            }
+        }, function (err, node) {
+            if (err) {
+                return reject(err);
+            }
+            if (!node) {
+                return reject();
+            }
+            node.last_used = Date.now();
+            node.save(function () {
+                resolve(node);
+            });
         });
-    });
+    })
+
 };
 module.exports = mongoose.model('Node', NodeSchema);
