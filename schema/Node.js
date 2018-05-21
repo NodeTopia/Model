@@ -42,12 +42,12 @@ var NodeSchema = new Schema({
         used: Number,
         total: Number,
         reserved: Number,
-        avalibale: number
+        avalibale: Number
     },
     cores: {
         count: Number,
         used: [Number],
-        avalibale: number
+        avalibale: Number
     },
     is_active: {
         type: Boolean,
