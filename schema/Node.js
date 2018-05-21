@@ -47,7 +47,8 @@ var NodeSchema = new Schema({
     cores: {
         count: Number,
         used: [Number],
-        avalibale: Number
+        avalibale: Number,
+        loadavg: [Number]
     },
     is_active: {
         type: Boolean,
