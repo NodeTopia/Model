@@ -22,10 +22,14 @@ var QuotaSchema = new Schema({
 		type : Number,
 		'default' : 0
 	},
-	memory : {
-		type : Number,
-		'default' : 0
-	},
+    memory : {
+        type : Number,
+        'default' : 0
+    },
+    cpu : {
+        type : Number,
+        'default' : 0
+    },
 	services : {
 		type : Number,
 		'default' : 0
