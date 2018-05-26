@@ -130,4 +130,14 @@ NodeSchema.statics.getZone = function (options, cb) {
     })
 
 };
+NodeSchema.index({
+    'memory.avalibale':1,
+    'memory.avalibale':1,
+    zone:1,
+    closing:1,
+    multitenant:1,
+    reserved:1,
+    is_active:1,
+    last_used:1
+})
 module.exports = mongoose.model('Node', NodeSchema);
