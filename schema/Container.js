@@ -22,10 +22,17 @@ var ContainerSchema = new Schema({
 		type : Boolean,
 		'default' : true
 	},
-	is_stopping : {
-		type : Boolean,
-		'default' : false
-	},
+    is_stopping : {
+        type : Boolean,
+        'default' : false
+    },
+    evicted : {
+        type : Boolean,
+        'default' : false
+    },
+    evicted_at : {
+        type : Date
+    },
 	statusCode : {
 		type : Number
 	},

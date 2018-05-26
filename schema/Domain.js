@@ -22,7 +22,7 @@ var DomainSchema = new Schema({
     },
     hosts: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Host'
+        ref: 'Host_'
     }]
 });
 

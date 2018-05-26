@@ -36,4 +36,4 @@ HostSchema.pre('save', function (next) {
     this.updated_at = new Date();
     next();
 });
-module.exports = mongoose.model('Host', HostSchema);
+module.exports = mongoose.model('Host_', HostSchema);
